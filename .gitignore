@@ -1,7 +1,7 @@
-# Ignore all images
-*.png
-*.jpg
-*.jpeg
+# # Ignore all images
+# *.png
+# *.jpg
+# *.jpeg
 
 # Ignore installation image files
 *.iso
