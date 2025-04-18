@@ -1,0 +1,10 @@
+# Ignore all images
+*.png
+*.jpg
+*.jpeg
+
+# Ignore installation image files
+*.iso
+*.img
+*.vmdk
+*.qcow2
