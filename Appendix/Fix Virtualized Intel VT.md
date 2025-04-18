@@ -1,4 +1,4 @@
-In case you meet this error when lauching the PnetLab in VMware Workstation:
+In case you meet this error when launching the PnetLab in VMware Workstation:
 
 ```plaintext
 Virtualized Intel VT-x/EPT is not supported on this platform.
@@ -47,14 +47,14 @@ Then restart the computer
 
 5. **Try to launch the PnetLab again**
 
-The PnetLab VM now should be able to run without the error message. However, since the `Hyper-V` is disabled, you will not be able to run any other windows servies that requring `Hyper-V` such as Docker Desktop, WSL2, etc.
+The PnetLab VM now should be able to run without the error message. However, since the `Hyper-V` is disabled, you will not be able to run any other Windows services that require `Hyper-V` such as Docker Desktop, WSL2, etc.
 
-Refenrences: https://youtu.be/p76EhflJ1l0?si=AdlQtFex8kG9Tvxi
+References: https://youtu.be/p76EhflJ1l0?si=AdlQtFex8kG9Tvxi
 
 
 # Re-enable Hyper-V
 
-Incase you need to re-enable the `Hyper-V` for other services, e.g Docker Desktop, do steps in reverse order:
+In case you need to re-enable the `Hyper-V` for other services, e.g Docker Desktop, do steps in reverse order:
 
 1. Run Windows Powershell with administrator privilege and run:
 

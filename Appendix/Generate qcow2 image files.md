@@ -1,4 +1,4 @@
-This guilde will show you how to generate qcow2 image files from a running instance VM in VMware Workstation Pro 17. This can help we reuse that VM setting without need to reconfigure it again.
+This guide will show you how to generate qcow2 image files from a running instance VM in VMware Workstation Pro 17. This can help us reuse that VM setting without need to reconfigure it again.
 
 First, open the VMware, choose that machine, click `File` -> `Export to OVF...` -> Choose the location to save the file -> Click `OK`.
 
@@ -44,7 +44,9 @@ PS C:\Users\Chu Trung Anh\Downloads\ISO>  qemu-img convert -f vmdk -O qcow2 '.\U
 > [!IMPORTANT]  
 > Why I name the output file as `virtioa.qcow2`? -> The image must follow [naming convention by EVE](https://www.eve-ng.net/index.php/documentation/qemu-image-namings/): place it in `/opt/unetlab/addons/qemu/` under a subfolder named `linux-*`, `win-*`, or `winserver-*`, and name the image file `virtioa.qcow2` (with linux). **DO NOT** name this arbitrarily, otherwise PnetLab will not be able to find and load the image file.
 
-We now have the qcow2 image file to use in PnetLab. By follow this guild, you can generate any qcow2 image file from a running instance VM in VMware Workstation Pro 17. However, some distro, like I tested with Parrot OS Security, can not be boot up in PnetLab if use this way:
+In case you do not like using command line to create and copy files to VM, you can use software like WinSCP or FileZilla to do similar tasks. Just make sure to copy the file to the correct directory and name it as `virtioa.qcow2`.
+
+We now have the qcow2 image file to use in PnetLab. By follow this guide, you can generate any qcow2 image file from a running instance VM in VMware Workstation Pro 17. However, some distro, like I tested with Parrot OS Security, can not be boot up in PnetLab if use this way:
 
 ![alt text](image.png)
 
