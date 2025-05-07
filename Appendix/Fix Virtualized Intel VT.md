@@ -72,6 +72,7 @@ Go to Windows Settings → Search for Core Isolation -> Click Core Isolation Det
 3. Enable Virtualization-Based Security in Group Policy
 
 Press `Windows + R`, type `gpedit.msc` and hit Enter -> Go to: Computer Configuration → Administrative Templates → System → Device Guard
+
 Double-click "Turn on Virtualization Based Security" → Set to Enabled.
 
 4.  Enable features in "Windows Features" menu

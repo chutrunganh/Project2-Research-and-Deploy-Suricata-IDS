@@ -16,7 +16,7 @@ This project focuses on researching and deploying **Suricata IDS (Intrusion Dete
 
 ### 🖼️ Current Network Topology
 
-![Network Topology](assets/currently_network.png)
+![Network Topology](assets/NetworkTopology.png)
 
 ---
 
