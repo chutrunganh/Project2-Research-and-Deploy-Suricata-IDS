@@ -1,7 +1,7 @@
-> IMPORTANT
-> The version using to conduct this project is Ubuntu Server 24.04.2, VMware Workstation 17.6.3.
+> [!IMPORTANT] 
+> The version used to conduct this project is Ubuntu Server 24.04.2, VMware Workstation 17.6.3.
 
-This is just guilde the process of setting up a static IP address for Ubuntu Server, do not use exactly the same IP address as in this guide, modify it to fit your network environment.
+This guide explains the process of setting up a static IP address for Ubuntu Server. Do not use the exact IP address shown in this guide; modify it to fit your network environment.
 
 # 🌐 Config static IP address for Ubuntu Server 
 
@@ -13,7 +13,7 @@ I will use SSH to config the static IP address for the Ubuntu server from my hos
 ssh chutrunganh@192.168.81.130
 ```
 
-One SSH successfully, follow the steps below on host machine to configure the static IP address.
+Once SSH is successful, follow the steps below on the host machine to configure the static IP address.
 
 1. **Check the Current Network Configuration**
 
@@ -42,7 +42,7 @@ In this example, the network interface is `ens33` (not `lo`, which is the loopba
 
 2. **Find the default gateway**
 
-```bashc:\Users\Chu Trung Anh\Desktop\Project\Product\Project2_IDS\image-1.png
+```bash
 ip route show
 ```
 Sample output:
@@ -166,14 +166,14 @@ sudo netplan apply
 ```
 Then type `exit` to exit the SSH session, restart the virtual machine, and SSH back to the server using the new static IP address
 
-Incase you meet this warning when SSH back to the server:
+In case you meet this warning when SSH back to the server:
 
 ```plaintext
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ```
-Fix by removing old key:
+Fix this by removing the old key:
 
 ```bash
 ssh-keygen -R 192.168.81.10
@@ -217,7 +217,7 @@ PING 192.168.81.2 (192.168.81.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.328/0.676/1.025/0.348 ms
 ```
 
-Ping the internet (e.g., Google DNS):
+Ping the internet (e.g., Google):
 
 ```bash
 ping google.com -c 2

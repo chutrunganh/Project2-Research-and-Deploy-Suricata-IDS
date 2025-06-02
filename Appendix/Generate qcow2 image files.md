@@ -1,10 +1,10 @@
-This guide will show you how to generate qcow2 image files from a running instance VM in VMware Workstation Pro 17. This can help us reuse that VM setting without need to reconfigure it again.
+This guide will show you how to generate `qcow2` image files from a running instance VM in VMware Workstation Pro 17. This can help us reuse that VM setting without needing to reconfigure it again.
 
-First, open the VMware, choose that machine, click `File` -> `Export to OVF...` -> Choose the location to save the file -> Click `OK`.
+First, open VMware Workstation, choose that machine, click `File` -> `Export to OVF...` -> Choose the location to save the file -> Click `OK`.
 
 ![alt text](image-1.png)
 
-Wait till the machine is exported, look at the directory, you will see a `.ovf` file and a `.vmdk` file. The `.ovf` file is the setting of the VM, and the `.vmdk` file is the disk image of that VM.
+Navigate to the directory, you will see a `.ovf` file and a `.vmdk` file. The `.ovf` file is the setting of the VM, and the `.vmdk` file is the disk image of that VM.
 
 ![alt text](image-2.png)
 
@@ -42,7 +42,7 @@ PS C:\Users\Chu Trung Anh\Downloads\ISO>  qemu-img convert -f vmdk -O qcow2 '.\U
 ```
 
 > [!IMPORTANT]  
-> Why I name the output file as `virtioa.qcow2`? -> The image must follow [naming convention by EVE](https://www.eve-ng.net/index.php/documentation/qemu-image-namings/): place it in `/opt/unetlab/addons/qemu/` under a subfolder named `linux-*`, `win-*`, or `winserver-*`, and name the image file `virtioa.qcow2` (with linux). **DO NOT** name this arbitrarily, otherwise PnetLab will not be able to find and load the image file.
+> Why do I name the output file as `virtioa.qcow2`? -> The image must follow [naming convention by EVE](https://www.eve-ng.net/index.php/documentation/qemu-image-namings/): place it in `/opt/unetlab/addons/qemu/` under a subfolder named `linux-*`, `win-*`, or `winserver-*`, and name the image file `virtioa.qcow2` (with linux). **DO NOT** name this arbitrarily, otherwise PnetLab will not be able to find and load the image file.
 
 In case you do not like using command line to create and copy files to VM, you can use software like WinSCP or FileZilla to do similar tasks. Just make sure to copy the file to the correct directory and name it as `virtioa.qcow2`.
 
