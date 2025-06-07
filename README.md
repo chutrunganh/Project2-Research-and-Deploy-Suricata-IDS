@@ -53,7 +53,11 @@ The lab environment contains the following components:
 
     ![alt text](assets/image.png)
 
+    *All images you will need to run the lab*
+
     ![alt text](assets/image-1.png)
+
+    *Inside the `Network_devices` folder. Unzip the files, recheck the file extension before importing them into PnetLab.*
 
 ## 🛠️ Future Work
 - [ ] Send alerts from ELK to Gmail, Telegram, or other notification systems.
