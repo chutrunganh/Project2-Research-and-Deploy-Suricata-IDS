@@ -1,0 +1,39 @@
+### Passwd brute force ###
+alert http any any -> any any (msg:"WEB_SERVER Login Bruteforcing Detected"; flow:to_server,established; content:"/login.php"; nocase; http_uri; threshold: type both, track by_src, count 20, seconds 10; classtype:attempted-recon; sid:1; rev:4;)
+
+### DOS ###
+alert tcp any any -> any 80 (msg:"DOS Unusually fast port 80 SYN packets outbound, Potential DOS"; flags: S,12; threshold: type both, track by_dst, count 200, seconds 5; classtype:misc-activity; sid:2;)
+
+### Web shell ###
+alert http any any -> any any (msg:"ET WEB_SERVER WebShell - Simple - ."; flow:established,to_client; file_data; content:"."; sid:3; rev:2;)
+alert http any any -> any any (msg:"ET WEB_SERVER WebShell - Simple - tail"; flow:established,to_client; file_data; content:"tail "; sid:4; rev:2;)
+alert http any any -> any any (msg:"ET WEB_SERVER WebShell - Simple - less"; flow:established,to_client; file_data; content:"less "; sid:5; rev:2;)
+alert http any any -> any any (msg:"ET WEB_SERVER WebShell - Simple - nl"; flow:established,to_client; file_data; content:"nl "; sid:6; rev:2;)
+alert http any any -> any any (msg:"ET WEB_SERVER WebShell - Simple - ls"; flow:established,to_client; file_data; content:"ls "; sid:7; rev:2;)
+alert http any any -> any any (msg:"ET WEB_SERVER WebShell - Simple - cat"; flow:established,to_client; file_data; content:"cat "; sid:8; rev:2;)
+alert http any any -> any any (msg:"ET WEB_SERVER WebShell - Simple - ;"; flow:established,to_client; file_data; uricontent:";"; sid:9; rev:2;)
+
+### XSS ### 
+alert http any any -> any 80 (msg:"WEB_SERVER has detected some tag in URI, Possible Cross Site Scripting Attempt"; flow:to_server,established; uricontent:"<script"; nocase; sid:10; rev:2;)
+alert http any any -> any 80 (msg:"WEB_SERVER has detected some tag in URI, Possible Cross Site Scripting Attempt"; flow:to_server,established; uricontent:"<svg"; nocase; sid:11; rev:2;)
+alert http any any -> any 80 (msg:"WEB_SERVER has detected some tag in URI, Possible Cross Site Scripting Attempt"; flow:to_server,established; uricontent:"<a"; nocase; sid:12; rev:2;)
+alert http any any -> any 80 (msg:"WEB_SERVER has detected some tag in URI, Possible Cross Site Scripting Attempt"; flow:to_server,established; uricontent:"<img"; nocase; sid:13; rev:2;)
+alert http any any -> any 80 (msg:"WEB_SERVER has detected some tag in URI, Possible Cross Site Scripting Attempt"; flow:to_server,established; uricontent:"<src"; nocase; sid:14; rev:2;)
+alert http any any -> any 80 (msg:"WEB_SERVER has detected some tag in URI, Possible Cross Site Scripting Attempt"; flow:to_server,established; uricontent:"onload"; nocase; sid:15; rev:2;)
+alert http any any -> any 80 (msg:"WEB_SERVER has detected some tag in URI, Possible Cross Site Scripting Attempt"; flow:to_server,established; uricontent:"onerror"; nocase; sid:16; rev:2;)
+
+### SQLi ###
+alert http any any -> any any (msg:"WEB_SERVER has detected some syntax sql, Possible MySQL SQLi Attempt"; flow:to_server,established; uricontent:"and";sid:17; rev:4;)
+alert http any any -> any any (msg:"WEB_SERVER has detected some syntax sql, Possible MySQL SQLi Attempt"; flow:to_server,established; uricontent:"or"; sid:18; rev:3;)
+alert http any any -> any any (msg:"WEB_SERVER has detected some syntax sql, Possible MySQL SQLi Attempt"; flow:to_server,established; uricontent:"SELECT"; sid:19; rev:3;)
+alert http any any -> any any (msg:"WEB_SERVER has detected some syntax sql, Possible MySQL SQLi Attempt"; flow:to_server,established; uricontent:"UNION"; sid:20; rev:3;)
+alert http any any -> any any (msg:"WEB_SERVER has detected some syntax sql, Possible MySQL SQLi Attempt"; flow:to_server,established; uricontent:"WHERE"; sid:21; rev:3;)
+alert http any any -> any any (msg:"WEB_SERVER has detected some syntax sql, Possible MySQL SQLi Attempt"; flow:to_server,established; uricontent:"FROM"; sid:22; rev:3;)
+
+
+
+
+
+
+
+

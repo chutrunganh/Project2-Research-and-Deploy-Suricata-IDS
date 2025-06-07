@@ -48,3 +48,6 @@ The lab environment has been partially set up, including:
 - **ELK Stack** (planned): For centralized logging and alerting.
 
 
+![alt text](image.png)
+
+![alt text](image-1.png)
