@@ -10,3 +10,8 @@
 *.qcow2
 *.vdi
 *.bin
+
+# Ignore Cisco network device image files (exceed GitHub file size limit)
+ISO_Files/Network_devices/
+*.bin
+**/Network_devices/**
