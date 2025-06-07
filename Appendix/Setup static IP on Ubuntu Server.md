@@ -58,7 +58,7 @@ So the default gateway is `192.168.81.2`, remember this as we will use it later.
 
 Select an IP address **outside** the DHCP pool of your network to avoid conflicts. If you're using VMware, check the DHCP range via: `Edit` -> `Virtual Network Editor` -> `Choose the network you are using` -> `DHCP settings`. As in my case:
 
-![alt text](image-3.png)
+![alt text](assets/image-3.png)
 
 The range is from `192.168.81.128` to `192.168.81.254`, so I will use `192.168.81.10` as our static IP.
 

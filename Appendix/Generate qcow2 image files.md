@@ -2,11 +2,11 @@ This guide will show you how to generate `qcow2` image files from a running inst
 
 First, open VMware Workstation, choose that machine, click `File` -> `Export to OVF...` -> Choose the location to save the file -> Click `OK`.
 
-![alt text](image-1.png)
+![alt text](assets/image-1.png)
 
 Navigate to the directory, you will see a `.ovf` file and a `.vmdk` file. The `.ovf` file is the setting of the VM, and the `.vmdk` file is the disk image of that VM.
 
-![alt text](image-2.png)
+![alt text](assets/image-2.png)
 
 The `vmdk` file is the one we need to convert to `qcow2` format. In order to convert, we need a tool called `qemu-img`. To install, run PowerShell with admin privilege and run the [following command](https://www.powershellgallery.com/packages/install-qemu-img/1.1):
 
@@ -46,7 +46,7 @@ PS C:\Users\Chu Trung Anh\Downloads\ISO>  qemu-img convert -f vmdk -O qcow2 '.\U
 
 We now have the qcow2 image file to use in PnetLab. By follow this guide, you can generate any qcow2 image file from a running instance VM in VMware Workstation Pro 17. However, some distro, like I tested with Parrot OS Security, can not be boot up in PnetLab if use this way:
 
-![alt text](image.png)
+![alt text](assets/image.png)
 
 > [!TIP]
 > More devices' pre built `qcow2` image file can be found [here](https://cnttshop.vn/blogs/cong-cu-labs/chia-se-100g-file-ios-cua-cac-hang-su-dung-cho-eve-va-pnetlab)
