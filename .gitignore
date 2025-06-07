@@ -12,6 +12,4 @@
 *.bin
 
 # Ignore Cisco network device image files (exceed GitHub file size limit)
-ISO_Files/Network_devices/
-*.bin
-**/Network_devices/**
+ISO_Files/Network_devices/*.bin
