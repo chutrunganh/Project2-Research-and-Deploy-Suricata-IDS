@@ -29,9 +29,9 @@ The lab environment contains the following components:
 
 - **Kali Linux** VM for penetration testing and simulating attacks against the webserver. The attack samples can be found in the [attack-sample](./attack-sample/) folder.
 
-## Documentation
+## 📝 Documentation
 
-- For the theoretical background of IDS, see [Project2_Report.pdf](Project2_Report.pdf).
+- For the theoretical background of IDS, see [Project2_Report.pdf](./Project2_Report.pdf).
 
 - For the detailed step-by-step guide on how to set up the lab environment, see [LabSetup](./LabSetup/).
 
