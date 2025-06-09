@@ -14,6 +14,9 @@ Virtualized Intel VT-x/EPT is not supported on this platform.
 
 To fix this issue, follow these steps:
 
+> [!WARNING]
+> These fixes primarily disable **WSL (Windows Subsystem for Linux)**. As a result, certain Windows features that rely on WSL or Hyper-V, such as virtual machines using WSL as a hypervisor,  third-party services that require Hyper-V, like Docker Desktop — may stop working. To re-enable WSL, refer to section II [Re-enable Hyper-V for other services](#ii-re-enable-hyper-v-for-other-services).
+
 # Fix the issue by disabling Hyper-V and related features
 
 
@@ -72,13 +75,11 @@ Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All
 
 2. **Turn ON Memory Integrity (Core Isolation)**
 
-Go to Windows Settings → Search for Core Isolation -> Click Core Isolation Details.
+Go to Windows Settings → Search for Core Isolation -> Click Core Isolation Details -> Turn on `Memory integrity`.
 
 3. **Enable Virtualization-Based Security in Group Policy**
 
-Press `Windows + R`, type `gpedit.msc` and hit Enter -> Go to: Computer Configuration → Administrative Templates → System → Device Guard
-
-Double-click "Turn on Virtualization Based Security" → Set to Enabled.
+Press `Windows + R`, type `gpedit.msc` and hit Enter -> Go to: Computer Configuration → Administrative Templates → System → Device Guard -> Double-click "Turn on Virtualization Based Security" → Set to Enabled.
 
 4.  **Enable features in "Windows Features" menu**
 
